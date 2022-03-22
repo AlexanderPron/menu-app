@@ -1,7 +1,7 @@
 import React from "react";
-import "../menu-app.css"
+import {Nav} from 'react-bootstrap'; 
 export default function MenuItem(props) {
     return (
-        <li className="menu-item">{props.menuItem.value}</li>
+        <Nav.Link href={'#' + props.menuItem.target}>{props.menuItem.value}</Nav.Link>
     )
 }

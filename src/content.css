@@ -1,0 +1,15 @@
+.content {
+    padding-bottom: 3rem;
+}
+.chapter1 {
+    height: 33rem;
+    background-color: bisque;
+}
+.chapter2 {
+    height: 33rem;
+    background-color: blue;
+}
+.chapter3 {
+    height: 33rem;
+    background-color: red;
+}
