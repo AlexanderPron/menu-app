@@ -1,6 +1,9 @@
 import React from "react";
 import Menu from "./menu-components/Menu";
 import Content from "./menu-components/Content";
+import Chapter1 from "./menu-components/Chapter1";
+import Chapter2 from "./menu-components/Chapter2";
+import Chapter3 from "./menu-components/Chapter3";
 
 function App() {
   const menuItemList = [
@@ -19,14 +22,19 @@ function App() {
     {
       id: 3,
       isActive: false,
-      value: "Раздел 3",
+      value: "Раздел 3. Графики",
       target: "chapter3",
     },
   ];
+
   return (
     <div>
       <Menu menuItems={menuItemList} />
-      <Content menuItems={menuItemList} />
+      <Content menuItems={menuItemList}>
+        <Chapter1></Chapter1>
+        <Chapter2></Chapter2>
+        <Chapter3></Chapter3>
+      </Content>
     </div>
   );
 }
