@@ -3,7 +3,7 @@ import MenuItem from "./MenuItem";
 import { Navbar, Container, Offcanvas, Nav } from "react-bootstrap";
 export default function Menu(props) {
   return (
-    <Navbar bg="light" expand={false} fixed="top">
+    <Navbar bg="light" expand={false} fixed="top" sticky="top">
       <Container fluid>
         <Navbar.Brand href="#">Ииигарь!!!</Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
