@@ -10,7 +10,10 @@ export default function Content(props) {
         return (
           <div className={menuItem.target} key={menuItem.id}>
             {" "}
-            <a name={menuItem.target}> </a> {props.children[i - 1]}
+            <a className="anchor" name={menuItem.target}>
+              {" "}
+            </a>{" "}
+            {props.children[i - 1]}
           </div>
         );
       })}

@@ -3,9 +3,9 @@ import MenuItem from "./MenuItem";
 import { Navbar, Container, Offcanvas, Nav } from "react-bootstrap";
 export default function Menu(props) {
   return (
-    <Navbar bg="light" expand={false} fixed="top" sticky="top">
+    <Navbar bg="light" expand={false} sticky="top">
       <Container fluid>
-        <Navbar.Brand href="#">Ииигарь!!!</Navbar.Brand>
+        <Navbar.Brand href="#">Итоговый отчёт за 2022 год</Navbar.Brand>
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
         <Navbar.Offcanvas
           id="offcanvasNavbar"
@@ -14,7 +14,7 @@ export default function Menu(props) {
         >
           <Offcanvas.Header closeButton>
             <Offcanvas.Title id="offcanvasNavbarLabel">
-              Гарри, с наступающим ДэРэ тебя!
+              Разделы отчета
             </Offcanvas.Title>
           </Offcanvas.Header>
           <Offcanvas.Body>

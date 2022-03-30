@@ -29,7 +29,7 @@ function App() {
 
   return (
     <div>
-      <Menu menuItems={menuItemList} />
+      <Menu menuItems={menuItemList}></Menu>
       <Content menuItems={menuItemList}>
         <Chapter1></Chapter1>
         <Chapter2></Chapter2>
