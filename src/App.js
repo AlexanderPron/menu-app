@@ -1,9 +1,6 @@
 import React from "react";
 import Menu from "./menu-components/Menu";
-import Content from "./menu-components/Content";
-import Chapter1 from "./menu-components/Chapter1";
-import Chapter2 from "./menu-components/Chapter2";
-import Chapter3 from "./menu-components/Chapter3";
+import Main from "./menu-components/Main";
 
 function App() {
   const menuItemList = [
@@ -30,11 +27,7 @@ function App() {
   return (
     <div>
       <Menu menuItems={menuItemList} />
-      <Content menuItems={menuItemList}>
-        <Route path='/' component={Main}/>
-        <Route path='/report' component={Report}/>
-        <Route path='/report/:id' component={Chapter}/>
-      </Content>
+      <Main />
     </div>
   );
 }
