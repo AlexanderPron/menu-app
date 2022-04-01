@@ -29,11 +29,11 @@ function App() {
 
   return (
     <div>
-      <Menu menuItems={menuItemList}></Menu>
+      <Menu menuItems={menuItemList} />
       <Content menuItems={menuItemList}>
-        <Chapter1></Chapter1>
-        <Chapter2></Chapter2>
-        <Chapter3></Chapter3>
+        <Route path='/' component={Main}/>
+        <Route path='/report' component={Report}/>
+        <Route path='/report/:id' component={Chapter}/>
       </Content>
     </div>
   );
