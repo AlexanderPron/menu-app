@@ -1,17 +1,47 @@
 import React from "react";
-import { Routes, Route } from 'react-router-dom';
-import Chapter1 from "./Chapter1";
-import Chapter2 from "./Chapter2";
+import { Outlet } from "react-router-dom";
+import Menu from "./Menu";
 
 export default function Main() {
-  return(
-    <main>
-      <h1>Главная страница</h1>
-      <Routes>
-        <Route path='/' component={Main}/>
-        <Route path='/report' component={Chapter1}/>
-        <Route path='/report/:id' component={Chapter2}/>
-      </Routes>
-    </main>
-);
+  const menuItemList = [
+    {
+      id: 1,
+      isActive: false,
+      value: "Итоговый отчет за 2021 год",
+      target: "report",
+      isChapterContent: false,
+    },
+    {
+      id: 2,
+      isActive: false,
+      value: "Раздел 1",
+      target: "chapter1",
+      isChapterContent: true,
+    },
+    {
+      id: 3,
+      isActive: false,
+      value: "Раздел 2",
+      target: "chapter2",
+      isChapterContent: true,
+    },
+    {
+      id: 4,
+      isActive: false,
+      value: "Раздел 3. Графики",
+      target: "charts",
+      isChapterContent: true,
+    },
+  ];
+  return (
+    <div>
+      <header>
+        <Menu menuItems={menuItemList} />
+      </header>
+
+      <Outlet />
+
+      <footer></footer>
+    </div>
+  );
 }

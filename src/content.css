@@ -1,18 +1,15 @@
-/* .content {
-    padding-bottom: 3rem;
-} */
-/* .anchor {
-    padding-top: 30rem;
-} */
-.chapter1 {
-    height: 33rem;
-    background-color: bisque;
+.content {
+    display: flex;
+    width: 90%;
+    margin: 0 auto;
 }
-.chapter2 {
-    height: 33rem;
-    background-color: blue;
+.content-left {
+    width: 50%;
 }
-.chapter3 {
-    height: 33rem;
-    background-color: red;
+.content-right {
+    width: 50%;
+}
+.p_style_test {
+    height: 14px;
+    color: cornflowerblue;
 }

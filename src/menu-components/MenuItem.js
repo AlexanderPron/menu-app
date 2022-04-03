@@ -1,12 +1,15 @@
 import React from "react";
 import { Nav } from "react-bootstrap";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import { LinkContainer } from "react-router-bootstrap";
+
 export default function MenuItem(props) {
-  return (
-    // <Nav.Link href={"#" + props.menuItem.target}>
-    //   {props.menuItem.value}
-    // </Nav.Link>
-    <Link to={`/report/${props.menuItem.id}`}>{props.menuItem.value}</Link>
-    
-  );
+  if (props.menuItem.isChapterContent) {
+    return (
+      <LinkContainer to={`/report/${props.menuItem.target}`}>
+        <Nav.Link>{props.menuItem.value}</Nav.Link>
+      </LinkContainer>
+    );
+  }
+  return <Link to={`/report`}>{props.menuItem.value}</Link>;
 }
