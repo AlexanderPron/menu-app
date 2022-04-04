@@ -3,7 +3,7 @@ import { Outlet } from "react-router-dom";
 import Menu from "./Menu";
 
 export default function Main() {
-  const menuItemList = [
+  let menuItemList = [
     {
       id: 1,
       isActive: false,
@@ -27,7 +27,7 @@ export default function Main() {
     },
     {
       id: 4,
-      isActive: false,
+      isActive: true,
       value: "Раздел 3. Графики",
       target: "charts",
       isChapterContent: true,

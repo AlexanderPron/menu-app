@@ -9,7 +9,7 @@ export default function ReportChart() {
   return (
     <div className="content">
       <div className="content-left">
-        <h2>Раздел 1</h2>
+        <h2>Графики</h2>
       </div>
       <div className="content-right">
         <h2>Вариант 3</h2>
