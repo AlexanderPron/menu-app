@@ -23,7 +23,6 @@ export default function NavigateCarousel(props) {
       prevIndex = 0;
       nextIndex = 2;
     }
-    console.log(i);
     return (
       <div>
         <Link to={`/report/${chapters[prevIndex].target}`}> {"<"} </Link>
