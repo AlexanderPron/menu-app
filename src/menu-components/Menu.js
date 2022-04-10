@@ -1,17 +1,23 @@
 import React from "react";
 import MenuItem from "./MenuItem";
+import { useState } from "react";
 import { Navbar, Container, Offcanvas, Nav } from "react-bootstrap";
 import NavigateCarousel from "./NavigateCarousel";
+import { LinkContainer } from "react-router-bootstrap";
+
+function setActiveItem(activeItemID) {
+  setState(activeItemID);
+}
 
 export default function Menu(props) {
-  console.log(props.routeName);
+  let [activeItemID, setActiveItemID] = useState(0);
   return (
     <Navbar bg="light" expand={false} sticky="top">
       <Container fluid>
         <Navbar.Brand href="/">Итоговый отчёт за 2022 год</Navbar.Brand>
         <NavigateCarousel
           menuItems={props.menuItems}
-          routeName={props.routeName}
+          setActiveItem={setActiveItem}
         />
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
         <Navbar.Offcanvas
