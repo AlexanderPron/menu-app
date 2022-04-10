@@ -8,12 +8,12 @@ import ReportChart from "./menu-components/ReportChart";
 import Menu from "./menu-components/Menu";
 
 export default function App() {
-  const [routeName, setRouteName] = useState("/");
-  const menuItemList = [
+  const [routeID, setRouteID] = useState(0);
+  const routeItems = [
     {
       id: 0,
       isActive: false,
-      value: "XZ",
+      value: "Главная страница",
       target: "/",
       isChapterContent: false,
     },
@@ -48,19 +48,25 @@ export default function App() {
   ];
   let location = useLocation();
   React.useEffect(() => {
-    setRouteName(location.pathname);
-  }, [location.pathname]);
+    for (let routeItem in routeItems) {
+      if (routeItem.target === location.pathname) {
+        setRouteID(routeItem.id);
+        break;
+      }
+      setRouteID(routeID);
+    }
+  }, [routeID]);
   return (
     <div>
-      <div style={{ height: 100 }}>
-        <Menu menuItems={menuItemList} routeName={routeName} />
+      <div style={{ height: 10 }}>
+        <Menu routeItems={routeItems} routeID={routeID} />
       </div>
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="report" element={<ReportMain />} />
-        <Route path="report/chapter1" element={<ReportChapter1 />} />
-        <Route path="report/chapter2" element={<ReportChapter2 />} />
-        <Route path="report/charts" element={<ReportChart />} />
+        <Route path="/report" element={<ReportMain />} />
+        <Route path="/report/chapter1" element={<ReportChapter1 />} />
+        <Route path="/report/chapter2" element={<ReportChapter2 />} />
+        <Route path="/report/charts" element={<ReportChart />} />
       </Routes>
     </div>
   );

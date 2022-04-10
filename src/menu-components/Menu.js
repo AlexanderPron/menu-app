@@ -5,19 +5,14 @@ import { Navbar, Container, Offcanvas, Nav } from "react-bootstrap";
 import NavigateCarousel from "./NavigateCarousel";
 import { LinkContainer } from "react-router-bootstrap";
 
-function setActiveItem(activeItemID) {
-  setState(activeItemID);
-}
-
 export default function Menu(props) {
-  let [activeItemID, setActiveItemID] = useState(0);
   return (
     <Navbar bg="light" expand={false} sticky="top">
       <Container fluid>
         <Navbar.Brand href="/">Итоговый отчёт за 2022 год</Navbar.Brand>
         <NavigateCarousel
-          menuItems={props.menuItems}
-          setActiveItem={setActiveItem}
+          routeItems={props.routeItems}
+          currentRouteID={props.routeID}
         />
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
         <Navbar.Offcanvas
@@ -32,8 +27,8 @@ export default function Menu(props) {
           </Offcanvas.Header>
           <Offcanvas.Body>
             <Nav className="justify-content-end flex-grow-1 pe-3">
-              {props.menuItems.map((menuItem) => {
-                return <MenuItem menuItem={menuItem} key={menuItem.id} />;
+              {props.routeItems.map((routeItem) => {
+                return <MenuItem routeItem={routeItem} key={routeItem.id} />;
               })}
             </Nav>
           </Offcanvas.Body>

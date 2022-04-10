@@ -4,20 +4,12 @@ import { Link } from "react-router-dom";
 import { LinkContainer } from "react-router-bootstrap";
 
 export default function MenuItem(props) {
-  let [activeItemID, setActiveItemID] = useState(0);
-  if (props.menuItem.isChapterContent) {
+  if (props.routeItem.isChapterContent) {
     return (
-      <LinkContainer to={`/report/${props.menuItem.target}`}>
-        <Nav.Link
-          onClick={(event) => {
-            // event.preventDefault();
-            setActiveItemID(props.menuItem.id);
-          }}
-        >
-          {props.menuItem.value}
-        </Nav.Link>
+      <LinkContainer to={`${props.routeItem.target}`}>
+        <Nav.Link>{props.routeItem.value}</Nav.Link>
       </LinkContainer>
     );
   }
-  return <Link to={`/`}>{props.menuItem.value}</Link>;
+  return <Link to={`/`}>{props.routeItem.value}</Link>;
 }
