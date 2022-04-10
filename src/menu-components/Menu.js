@@ -4,11 +4,15 @@ import { Navbar, Container, Offcanvas, Nav } from "react-bootstrap";
 import NavigateCarousel from "./NavigateCarousel";
 
 export default function Menu(props) {
+  console.log(props.routeName);
   return (
     <Navbar bg="light" expand={false} sticky="top">
       <Container fluid>
         <Navbar.Brand href="/">Итоговый отчёт за 2022 год</Navbar.Brand>
-        <NavigateCarousel menuItems={props.menuItems} />
+        <NavigateCarousel
+          menuItems={props.menuItems}
+          routeName={props.routeName}
+        />
         <Navbar.Toggle aria-controls="offcanvasNavbar" />
         <Navbar.Offcanvas
           id="offcanvasNavbar"
